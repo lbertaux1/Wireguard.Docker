@@ -88,33 +88,44 @@ services:
  
  Hit `CTRL` + `X`, `Y`, `ENTER` to save and exit the file.
  
+ Start Wireguard by running the following commands.
  
-
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+ ```
+ cd ~/wireguard/
+docker-compose up -d
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+Once you see the line that says `Creating Wireguard ...  done` your Wireguard client has finished installing.
 
-### Jekyll Themes
+### Step 4: Connect your phone to Wireguard
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/lbertaux1/Wireguard.Docker/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Run the following command to see the execution log and QR codes of Wireguard VPN connection settings. 
 
-### Support or Contact
+```
+docker-compose logs -f wireguard
+```
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Install and open the Wireguard application on your phone. Click `+` and then click `Create from QR code`. Scan the qr code from the terminal command output for the specific user that you want to configure. Your VPN is now set up on your phone.
+
+### Step 5: Connect your laptop to Wireguard
+
+Install the Wireguard application on your computer. 
+
+Next, you need to find the config file in your Ubuntu droplet using the command line. Go back to the command line that you were using and cd into the config directory for your chosen `user-config-file`.
+
+```
+cd ~/wireguard/config/peer_pc1
+```
+
+Replace `peer_pc1` with the name of your user-config-file.
+
+Look at the contents of your config file by running the following command.
+
+```
+cat peer_pc1.conf
+```
+
+Again, replace `peer_pc1` with the name of your user-config-file.
+
+Copy the contents of the file. Then, go over to your Wireguard application on your laptop, click `+`, click `add empty tunnel` and the paste the contents of the config file that you just copied. Fill in the `name` field with the name that you want to call your VPN, clcik `save`, and then you are ready to activate your VPN. 
+
