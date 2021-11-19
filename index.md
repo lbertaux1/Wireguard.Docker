@@ -111,13 +111,13 @@ Install and open the Wireguard application on your phone. Click `+` and then cli
 
 Install the Wireguard application on your computer. 
 
-Next, you need to find the config file in your Ubuntu droplet using the command line. Go back to the command line that you were using and cd into the config directory for your chosen `user-config-file`.
+Next, you need to find the config file in your Ubuntu droplet using the command line. Go back to the command line that you were using in Step 3 and cd into the config directory for your chosen `user-config-file`.
 
 ```
 cd ~/wireguard/config/peer_pc1
 ```
 
-Replace `peer_pc1` with the name of your user-config-file.
+Replace `peer_pc1` with the name of your user-config-file that you created in the .yml file.
 
 Look at the contents of your config file by running the following command.
 
@@ -127,5 +127,15 @@ cat peer_pc1.conf
 
 Again, replace `peer_pc1` with the name of your user-config-file.
 
-Copy the contents of the file. Then, go over to your Wireguard application on your laptop, click `+`, click `add empty tunnel` and the paste the contents of the config file that you just copied. Fill in the `name` field with the name that you want to call your VPN, clcik `save`, and then you are ready to activate your VPN. 
+Copy the contents of the file. Then, go over to your Wireguard application on your laptop, click `+`, click `add empty tunnel` and then paste the contents of the config file that you just copied. Fill in the `name` field with the name that you want to call your VPN, clcik `save`, and then you are ready to activate your VPN. 
+
+### Resources
+
+I used this [link](https://thematrix.dev/setup-wireguard-vpn-server-with-docker/) to learn how to set up Wireguard using Docker.
+
+### Proof of Installation
+
+[VPN on a mobile device](https://drive.google.com/file/d/1c7g4KFR9nihB847UuRSyXjKwpJ4xTPl0/view?usp=sharing)
+
+[VPN on a laptop](https://drive.google.com/file/d/1X3eETlUQIUPXqqcV3C200jXiLFUOuS1S/view?usp=sharing)
 
