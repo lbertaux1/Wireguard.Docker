@@ -44,7 +44,7 @@ mkdir -p ~/wireguard/
 mkdir -p ~/wireguard/config/
 ```
 
-Next, create the docker-compose.yml block. Run teh following command to open your .yml file.
+Next, create the docker-compose.yml block. Run the following command to open your .yml file.
 
 ```
 nano ~/wireguard/docker-compose.yml
